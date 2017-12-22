@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mi juego</title>
+    <script type="text/javascript">
+        var contador = 0;
+
+        var numeroPrimo = true;
+
+        function empezar(){
+            do{
+                comprobar();
+            }while(numeroPrimo);
+        }
+        function comprobar() {
+
+            numeroPrimo = true
+            var valprimo = window.prompt("Dime numero primo");
+            var valor = parseInt(valprimo);
+            // var valor = parseInt(document.getElementById("primo").value);
+
+            for (i = 2; i < valor; i++) {
+                if (valor % i == 0) {
+                    numeroPrimo = false;
+                    break;
+                }
+            }
+
+            if (numeroPrimo)
+                {
+                    contador++;
+                    valor = parseInt(valprimo);
+            }else{
+            window.alert("tu puntuacion es "+ contador);
+            contador = 0;
+        }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Numeros primos</h2>
+    <form>
+
+        <input type="button" onclick="empezar()" value="Juega" id="valor">
+
+    </form>
+
+</body>
+
+</html>
